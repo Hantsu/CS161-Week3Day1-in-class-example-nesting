@@ -1,0 +1,82 @@
+/******************************************************************************
+Filename:   day5.cpp
+Demo of math functions, nested if & switch
+*******************************************************************************/
+#include <iostream> //cout,endl,std::cin >> 
+#include <cmath> //pow,sqrt, floor, ceil;
+#include <cstdlib> //rand, srand
+#include <ctime> //time
+using namespace std;
+
+int main()
+{
+    const float PI = 3.14159;
+    float number;
+    float answer;
+    number = PI;  
+    int intAnswer;
+    
+    answer = sqrt(number);
+    cout << "square root of " << number << " = " << answer << endl;
+    answer = pow(number, 3);
+    cout << number << " raised to the  3rd power = " << answer << endl;
+    intAnswer = floor(number);
+    cout << number << " rounded down = " << intAnswer << endl;
+    intAnswer = ceil(number);
+    cout << number << " rounded down = " << intAnswer << endl;
+    
+    int numRand;
+    numRand = rand();
+    cout << numRand << endl;
+    numRand = rand();
+    cout << numRand << endl;
+    numRand = rand();
+    cout << numRand << endl;
+    
+    int age;
+    bool license;
+    string insurance;
+    cout<<"How old are you? ";
+    cin >> age;
+    
+    cout << "Do you have a license? 1 for yes, 0 for no. ";
+    cin >> license;
+    
+    cout << "What insurance do you have? (\"none\" if none)  ";
+    getline(cin, insurance);
+    
+    if (insurance != "none")
+    {
+        if (age >= 15)
+        {
+            if (license == true)
+                cout << "Drive safely!\n";
+            else
+                cout << "No license, no driving..";
+        }
+        else
+            cout << "Too young!";
+    }
+    else
+        cout << "No insurance, no driving..\n\n";
+        
+    int channel;
+    cin.sync();
+    cout << endl;
+    cout << "What channel?  ";
+    cin >> channel;
+    
+    switch(channel)
+    {
+        case 2: cout << "news\n";
+                break;
+        case 9: cout << "PBS\n";
+                break;
+        case 760: cout << "Sports\n";
+                break;
+        default: cout << "not a channel.\n\n";
+        }
+    
+
+    return 0;
+}
